@@ -283,6 +283,7 @@ Standing on the shoulders of giants:
 - [Axum](https://github.com/tokio-rs/axum) - The excellent web framework this is built on
 - [FastAPI](https://fastapi.tiangolo.com/) - Inspiration for developer experience
 - [Spring Boot](https://spring.io/projects/spring-boot) - Inspiration for conventions
+- [rapid-rs](https://github.com/ashishjsharda/rapid-rs) - fork from rapid-rs
 
 ---
 

@@ -281,6 +281,7 @@ cargo run
 - [Axum](https://github.com/tokio-rs/axum) - 卓越的 Web 框架
 - [FastAPI](https://fastapi.tiangolo.com/) - DX 灵感
 - [Spring Boot](https://spring.io/projects/spring-boot) - 约定式灵感
+- [rapid-rs](https://github.com/ashishjsharda/rapid-rs) - fork from rapid-rs
 
 ---
 
