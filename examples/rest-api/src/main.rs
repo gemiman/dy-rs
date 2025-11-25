@@ -1,4 +1,5 @@
 use dy_rs::prelude::*;
+use utoipa::OpenApi;
 
 #[derive(Serialize, Deserialize, Clone, ToSchema)]
 struct User {
@@ -38,6 +39,12 @@ use std::sync::{Arc, Mutex};
 type Database = Arc<Mutex<HashMap<Uuid, User>>>;
 
 /// Create a new user
+#[utoipa::path(
+    post,
+    path = "/users",
+    request_body = CreateUserRequest,
+    responses((status = 200, description = "User created", body = User))
+)]
 async fn create_user(
     State(db): State<Database>,
     ValidatedJson(payload): ValidatedJson<CreateUserRequest>,
@@ -55,12 +62,26 @@ async fn create_user(
 }
 
 /// Get all users
+#[utoipa::path(
+    get,
+    path = "/users",
+    responses((status = 200, description = "List users", body = [User]))
+)]
 async fn list_users(State(db): State<Database>) -> ApiResult<Vec<User>> {
     let users: Vec<User> = db.lock().unwrap().values().cloned().collect();
     Ok(Json(users))
 }
 
 /// Get a user by ID
+#[utoipa::path(
+    get,
+    path = "/users/{id}",
+    params(("id" = String, Path, description = "User ID")),
+    responses(
+        (status = 200, description = "User found", body = User),
+        (status = 404, description = "User not found")
+    )
+)]
 async fn get_user(
     State(db): State<Database>,
     Path(id): Path<Uuid>,
@@ -74,6 +95,16 @@ async fn get_user(
 }
 
 /// Update a user
+#[utoipa::path(
+    patch,
+    path = "/users/{id}",
+    params(("id" = String, Path, description = "User ID")),
+    request_body = UpdateUserRequest,
+    responses(
+        (status = 200, description = "User updated", body = User),
+        (status = 404, description = "User not found")
+    )
+)]
 async fn update_user(
     State(db): State<Database>,
     Path(id): Path<Uuid>,
@@ -92,6 +123,15 @@ async fn update_user(
 }
 
 /// Delete a user
+#[utoipa::path(
+    delete,
+    path = "/users/{id}",
+    params(("id" = String, Path, description = "User ID")),
+    responses(
+        (status = 200, description = "User deleted", body = User),
+        (status = 404, description = "User not found")
+    )
+)]
 async fn delete_user(
     State(db): State<Database>,
     Path(id): Path<Uuid>,
@@ -113,6 +153,18 @@ fn user_routes() -> Router<Database> {
         .route("/users/{id}", delete(delete_user))
 }
 
+#[derive(OpenApi)]
+#[openapi(
+    info(
+        title = "dy-rs REST API",
+        version = "0.1.0",
+        description = "Example REST API built with dy-rs"
+    ),
+    paths(create_user, list_users, get_user, update_user, delete_user),
+    components(schemas(User, CreateUserRequest, UpdateUserRequest))
+)]
+struct ApiDoc;
+
 #[tokio::main]
 async fn main() {
     // Create shared database
@@ -120,6 +172,7 @@ async fn main() {
 
     // Build and run the app
     App::new()
+        .with_openapi(ApiDoc::openapi())
         .auto_configure()
         .mount(user_routes().with_state(db))
         .run()

@@ -13,6 +13,7 @@ use crate::config::AppConfig;
 pub struct App {
     router: Router,
     config: Option<AppConfig>,
+    openapi: Option<utoipa::openapi::OpenApi>,
 }
 
 impl App {
@@ -21,7 +22,15 @@ impl App {
         Self {
             router: Router::new(),
             config: None,
+            openapi: None,
         }
+    }
+
+    /// Provide a custom OpenAPI document for Swagger UI.
+    /// If not set, a minimal default spec is used.
+    pub fn with_openapi(mut self, openapi: utoipa::openapi::OpenApi) -> Self {
+        self.openapi = Some(openapi);
+        self
     }
 
     /// Auto-configure the application with sensible defaults:
@@ -84,7 +93,9 @@ impl App {
 
         // Add Swagger UI if feature is enabled
         #[cfg(feature = "swagger-ui")]
-        let swagger = SwaggerUi::new("/docs").url("/api-docs/openapi.json", ApiDoc::openapi());
+        let swagger_doc = self.openapi.take().unwrap_or_else(|| ApiDoc::openapi());
+
+        let swagger = SwaggerUi::new("/docs").url("/api-docs/openapi.json", swagger_doc);
 
         // Build the router with middleware
         #[cfg(feature = "swagger-ui")]
