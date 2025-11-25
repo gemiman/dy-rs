@@ -196,7 +196,7 @@ APP__SERVER__PORT=8080 cargo run
 
 ## 示例
 
-查看 [examples](https://github.com/ashishjsharda/dy-rs/tree/main/examples) 目录：
+查看 [examples](https://github.com/gemiman/dy-rs/tree/main/examples) 目录：
 
 - ✅ **REST API** - 完整 CRUD 与校验
 - 🔜 **GraphQL API** - 即将到来
@@ -231,7 +231,7 @@ APP__SERVER__PORT=8080 cargo run
 ### 开发环境
 
 ```bash
-git clone https://github.com/ashishjsharda/dy-rs
+git clone https://github.com/gemiman/dy-rs
 cd dy-rs
 cargo build
 cargo test
@@ -275,7 +275,7 @@ cargo run
 
 ## 致谢
 
-由 [Ashish Sharda](https://github.com/ashishjsharda) 构建
+由 [Gemiman](https://github.com/gemiman) 构建
 
 站在巨人肩膀上：
 - [Axum](https://github.com/tokio-rs/axum) - 卓越的 Web 框架
@@ -286,4 +286,4 @@ cargo run
 
 **觉得有用请点 Star ⭐！**
 
-[报告缺陷](https://github.com/ashishjsharda/dy-rs/issues) · [请求功能](https://github.com/ashishjsharda/dy-rs/issues) · [文档](https://docs.rs/dy-rs)
+[报告缺陷](https://github.com/gemiman/dy-rs/issues) · [请求功能](https://github.com/gemiman/dy-rs/issues) · [文档](https://docs.rs/dy-rs)

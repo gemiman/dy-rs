@@ -33,7 +33,7 @@
 ## 开发环境
 
 ```bash
-git clone https://github.com/ashishjsharda/dy-rs
+git clone https://github.com/gemiman/dy-rs
 cd dy-rs
 cargo build
 cargo test
@@ -58,7 +58,7 @@ cargo run
 
 ## 问题交流
 
-可提交 issue 或联系 [@ashishjsharda](https://github.com/ashishjsharda)
+可提交 issue 或联系 [@gemiman](https://github.com/gemiman)
 
 ## 行为准则
 

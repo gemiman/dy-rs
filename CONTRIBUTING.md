@@ -33,7 +33,7 @@ Open an issue with:
 ## Development Setup
 
 ```bash
-git clone https://github.com/ashishjsharda/dy-rs
+git clone https://github.com/gemiman/dy-rs
 cd dy-rs
 cargo build
 cargo test
@@ -58,7 +58,7 @@ cargo run
 
 ## Questions?
 
-Feel free to open an issue or reach out to [@ashishjsharda](https://github.com/ashishjsharda)
+Feel free to open an issue or reach out to [@gemiman](https://github.com/gemiman)
 
 ## Code of Conduct
 

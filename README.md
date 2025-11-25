@@ -196,7 +196,7 @@ APP__SERVER__PORT=8080 cargo run
 
 ## Examples
 
-Check out the [examples](https://github.com/ashishjsharda/dy-rs/tree/main/examples) directory for:
+Check out the [examples](https://github.com/gemiman/dy-rs/tree/main/examples) directory for:
 
 - ✅ **REST API** - Full CRUD with validation
 - 🔜 **GraphQL API** - Coming soon
@@ -231,7 +231,7 @@ Contributions are welcome! This is an early-stage project with lots of opportuni
 ### Development Setup
 
 ```bash
-git clone https://github.com/ashishjsharda/dy-rs
+git clone https://github.com/gemiman/dy-rs
 cd dy-rs
 cargo build
 cargo test
@@ -277,7 +277,7 @@ at your option.
 
 ## Credits
 
-Built by [Ashish Sharda](https://github.com/ashishjsharda)
+Built by [Gemiman](https://github.com/gemiman)
 
 Standing on the shoulders of giants:
 - [Axum](https://github.com/tokio-rs/axum) - The excellent web framework this is built on
@@ -288,4 +288,4 @@ Standing on the shoulders of giants:
 
 **Star ⭐ this repo if you find it useful!**
 
-[Report Bug](https://github.com/ashishjsharda/dy-rs/issues) · [Request Feature](https://github.com/ashishjsharda/dy-rs/issues) · [Documentation](https://docs.rs/dy-rs)
+[Report Bug](https://github.com/gemiman/dy-rs/issues) · [Request Feature](https://github.com/gemiman/dy-rs/issues) · [Documentation](https://docs.rs/dy-rs)

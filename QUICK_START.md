@@ -19,7 +19,7 @@ git commit -m "Initial commit - dy-rs v0.1.0"
 # Create repository: dy-rs
 # Don't initialize with README (we already have one)
 
-git remote add origin https://github.com/ashishjsharda/dy-rs.git
+git remote add origin https://github.com/gemiman/dy-rs.git
 git branch -M main
 git push -u origin main
 ```
@@ -93,7 +93,7 @@ cargo publish
 
 Stop wiring boilerplate, start shipping.
 
-https://github.com/ashishjsharda/dy-rs
+https://github.com/gemiman/dy-rs
 
 #rustlang #webdev #opensource
 ```
@@ -169,7 +169,7 @@ cd /path/to/dy-rs
 git init
 git add .
 git commit -m "Initial commit - dy-rs v0.1.0 🚀"
-git remote add origin https://github.com/ashishjsharda/dy-rs.git  
+git remote add origin https://github.com/gemiman/dy-rs.git  
 git push -u origin main
 ```
 

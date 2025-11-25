@@ -19,7 +19,7 @@ git commit -m "Initial commit - dy-rs v0.1.0"
 # 创建仓库：dy-rs
 # 不要自动生成 README（我们已有）
 
-git remote add origin https://github.com/ashishjsharda/dy-rs.git
+git remote add origin https://github.com/gemiman/dy-rs.git
 git branch -M main
 git push -u origin main
 ```
@@ -93,7 +93,7 @@ cargo publish
 
 告别样板代码，专注交付。
 
-https://github.com/ashishjsharda/dy-rs
+https://github.com/gemiman/dy-rs
 
 #rustlang #webdev #opensource
 ```
@@ -169,7 +169,7 @@ cd /path/to/dy-rs
 git init
 git add .
 git commit -m "Initial commit - dy-rs v0.1.0 🚀"
-git remote add origin https://github.com/ashishjsharda/dy-rs.git  
+git remote add origin https://github.com/gemiman/dy-rs.git  
 git push -u origin main
 ```
 
