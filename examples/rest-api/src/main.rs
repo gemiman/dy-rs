@@ -1,5 +1,4 @@
 use dy_rs::prelude::*;
-use utoipa::OpenApi;
 
 #[derive(Serialize, Deserialize, Clone, ToSchema)]
 struct User {
@@ -172,8 +171,7 @@ async fn main() {
 
     // Build and run the app
     App::new()
-        .with_openapi(ApiDoc::openapi())
-        .auto_configure()
+        .auto_configure_with_openapi::<ApiDoc>()
         .mount(user_routes().with_state(db))
         .run()
         .await

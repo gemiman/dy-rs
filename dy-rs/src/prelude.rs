@@ -22,7 +22,7 @@ pub use validator::Validate;
 pub use chrono::{DateTime, Utc};
 pub use uuid::Uuid;
 
-pub use utoipa::ToSchema;
+pub use utoipa::{OpenApi, ToSchema};
 
 // Auth re-exports (when auth feature is enabled)
 #[cfg(feature = "auth")]

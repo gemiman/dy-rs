@@ -33,6 +33,23 @@ impl App {
         self
     }
 
+    /// Auto-configure the app and serve the provided OpenAPI doc at
+    /// `/api-docs/openapi.json` with Swagger UI at `/docs`.
+    /// When the `swagger-ui` feature is disabled, this falls back to `auto_configure`.
+    pub fn auto_configure_with_openapi<T: utoipa::OpenApi>(self) -> Self {
+        #[cfg(not(feature = "swagger-ui"))]
+        {
+            tracing::warn!("swagger-ui feature is disabled; skipping OpenAPI registration");
+            return self.auto_configure();
+        }
+
+        #[cfg(feature = "swagger-ui")]
+        {
+            let openapi = T::openapi();
+            self.with_openapi(openapi).auto_configure()
+        }
+    }
+
     /// Auto-configure the application with sensible defaults:
     /// - Loads configuration from files and environment
     /// - Sets up structured logging with tracing
@@ -95,6 +112,7 @@ impl App {
         #[cfg(feature = "swagger-ui")]
         let swagger_doc = self.openapi.take().unwrap_or_else(|| ApiDoc::openapi());
 
+        #[cfg(feature = "swagger-ui")]
         let swagger = SwaggerUi::new("/docs").url("/api-docs/openapi.json", swagger_doc);
 
         // Build the router with middleware
