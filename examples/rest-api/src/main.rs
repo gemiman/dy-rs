@@ -108,9 +108,9 @@ fn user_routes() -> Router<Database> {
     Router::new()
         .route("/users", post(create_user))
         .route("/users", get(list_users))
-        .route("/users/:id", get(get_user))
-        .route("/users/:id", patch(update_user))
-        .route("/users/:id", delete(delete_user))
+        .route("/users/{id}", get(get_user))
+        .route("/users/{id}", patch(update_user))
+        .route("/users/{id}", delete(delete_user))
 }
 
 #[tokio::main]
