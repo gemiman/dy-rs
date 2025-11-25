@@ -1,5 +1,7 @@
 # Contributing to dy-rs
 
+[中文文档](CONTRIBUTING-zh.md)
+
 Thank you for your interest in contributing to dy-rs! This is an early-stage project, and we welcome all contributions.
 
 ## How to Contribute

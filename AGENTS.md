@@ -1,5 +1,7 @@
 # Repository Guidelines
 
+[中文文档](AGENTS-zh.md)
+
 ## Project Structure & Module Organization
 - Workspace root defines shared tooling and dependencies (`Cargo.toml`, `Cargo.lock`).
 - `dy-rs/`: core framework crate (Axum-based server, config, validation, logging).

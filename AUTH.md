@@ -1,5 +1,7 @@
 # 🔐 Authentication & Authorization
 
+[中文文档](AUTH-zh.md)
+
 dy-rs includes a complete JWT-based authentication system out of the box.
 
 ## Quick Start

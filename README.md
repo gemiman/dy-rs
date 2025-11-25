@@ -1,5 +1,7 @@
 # 🚀 dy-rs
 
+[中文文档](README-zh.md)
+
 > **Zero-config, batteries-included web framework for Rust**  
 > FastAPI meets Spring Boot, powered by Axum
 

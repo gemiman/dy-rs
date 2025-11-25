@@ -1,5 +1,7 @@
 # 🚀 dy-rs - Quick Start Guide
 
+[中文文档](QUICK_START-zh.md)
+
 ## ⏱️ 5-Minute Setup
 
 ### Step 1: Download & Extract
