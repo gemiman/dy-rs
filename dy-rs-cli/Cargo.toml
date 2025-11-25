@@ -1,0 +1,22 @@
+[package]
+name = "dy-rs-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+description = "CLI tool for dy-rs framework"
+
+[[bin]]
+name = "dy"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+anyhow = "1.0"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+handlebars = "6.3"
+
+dy-rs = { path = "../dy-rs", default-features = true }

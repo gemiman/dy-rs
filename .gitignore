@@ -1,0 +1,32 @@
+# Rust
+/target
+**/*.rs.bk
+*.pdb
+Cargo.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config
+config/local.toml
+.env
+
+# Internal notes and drafts
+/notes/
+/drafts/
+/blog-posts/
+/product-hunt/
+MARKETING.md
+PUBLISHING*.md
+*_GUIDE.md
+FILE_NAVIGATOR.md
+PROJECT_SUMMARY.md
+START_HERE.md

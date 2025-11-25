@@ -1,0 +1,39 @@
+[workspace]
+members = ["dy-rs", "dy-rs-cli", "dy-rs-macros", "examples/*"]
+resolver = "2"
+
+[workspace.package]
+version = "0.2.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+authors = ["Ashish Sharda <ashishjsharda@gmail.com>"]
+repository = "https://github.com/ashishjsharda/dy-rs"
+homepage = "https://github.com/ashishjsharda/dy-rs"
+documentation = "https://docs.rs/dy-rs"
+keywords = ["web", "framework", "axum", "api", "rest"]
+categories = ["web-programming::http-server", "asynchronous"]
+
+[workspace.dependencies]
+axum = { version = "0.8", features = ["macros"] }
+tokio = { version = "1", features = ["full"] }
+axum-macros = "0.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tower = "0.5"
+tower-http = { version = "0.6", features = ["trace", "cors"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+sqlx = { version = "0.8", features = ["runtime-tokio", "postgres", "chrono", "uuid"] }
+uuid = { version = "1.18", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+thiserror = "2.0"
+anyhow = "1.0"
+config = "0.15"
+validator = { version = "0.20", features = ["derive"] }
+utoipa = { version = "5.4", features = ["axum_extras", "chrono", "uuid"] }
+utoipa-swagger-ui = { version = "9.0", features = ["axum"] }
+
+# Auth dependencies
+jsonwebtoken = "10.2"
+argon2 = "0.5"
+async-trait = "0.1"
