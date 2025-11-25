@@ -7,7 +7,7 @@ use utoipa::OpenApi;
 #[cfg(feature = "swagger-ui")]
 use utoipa_swagger_ui::SwaggerUi;
 
-use crate::config::AppConfig;
+use crate::{config::AppConfig, openapi};
 
 /// Main application builder
 pub struct App {
@@ -110,7 +110,13 @@ impl App {
 
         // Add Swagger UI if feature is enabled
         #[cfg(feature = "swagger-ui")]
-        let swagger_doc = self.openapi.take().unwrap_or_else(|| ApiDoc::openapi());
+        let swagger_doc = self.openapi.take().unwrap_or_else(|| {
+            if openapi::has_auto_operations() {
+                openapi::build_auto_openapi(openapi::DocInfo::default())
+            } else {
+                ApiDoc::openapi()
+            }
+        });
 
         #[cfg(feature = "swagger-ui")]
         let swagger = SwaggerUi::new("/docs").url("/api-docs/openapi.json", swagger_doc);

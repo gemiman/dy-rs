@@ -41,11 +41,13 @@ pub mod app;
 pub mod config;
 pub mod error;
 pub mod extractors;
+pub mod openapi;
 pub mod prelude;
 
 #[cfg(feature = "auth")]
 pub mod auth;
 
 pub use app::App;
+pub use dy_rs_macros::dy_api;
 pub use error::{ApiError, ApiResult};
 pub use extractors::ValidatedJson;

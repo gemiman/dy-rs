@@ -32,6 +32,8 @@ config.workspace = true
 validator.workspace = true
 utoipa.workspace = true
 utoipa-swagger-ui = { workspace = true, optional = true }
+inventory.workspace = true
+dy-rs-macros = { path = "../dy-rs-macros" }
 
 # Auth dependencies (optional)
 jsonwebtoken = { version = "10.2", features = ["rust_crypto"], optional = true }

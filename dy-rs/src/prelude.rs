@@ -22,6 +22,8 @@ pub use validator::Validate;
 pub use chrono::{DateTime, Utc};
 pub use uuid::Uuid;
 
+pub use crate::openapi::DocInfo;
+pub use dy_rs_macros::dy_api;
 pub use utoipa::{OpenApi, ToSchema};
 
 // Auth re-exports (when auth feature is enabled)
